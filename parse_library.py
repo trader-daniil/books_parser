@@ -57,6 +57,13 @@ def download_book_image(image_link):
         image.write(image_response.content)
 
 
+def get_comments(booksoup):
+    comments = [comment.span.text for comment in booksoup.find_all(
+        'div',
+        class_='texts')]
+    return comments
+
+
     
 
 photos_path = 'books'
@@ -71,7 +78,6 @@ Path(photos_path).mkdir(
     exist_ok=True,
 )
 
-
 for book_id in range(1, 11):
     book_url = f'https://tululu.org/b{book_id}/'
     downloading_book_url = f'https://tululu.org/txt.php?id={book_id}'
@@ -79,13 +85,17 @@ for book_id in range(1, 11):
         booksoup = get_book_soup(book_link=book_url)
     except requests.exceptions.HTTPError:
         continue
+
+    bookname = get_book_name(booksoup=booksoup)
+    comments = get_comments(booksoup=booksoup)
+    print(bookname)
+    if comments:
+        print(comments)
+
+"""
     image_link = get_book_image_link(booksoup=booksoup)
     download_book_image(image_link=image_link)
     
-
-
-
-"""
     try:
         download_book_text(
             book_link=downloading_book_url,
@@ -93,4 +103,5 @@ for book_id in range(1, 11):
         )
     except requests.exceptions.HTTPError:
         continue
+
 """
