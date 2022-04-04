@@ -15,27 +15,11 @@ def check_redirect(book_response):
         raise requests.exceptions.HTTPError
 
 
-def get_book_soup(book_link):
-    book_response = requests.get(url=book_link)
-    check_redirect(book_response=book_response)
-    book_response.raise_for_status()
-    soup = BeautifulSoup(book_response.text, 'lxml')
-    return soup
-
-
-def get_book_name(booksoup):
-    bookname = booksoup.find('body').find('table', class_='tabs').find('h1').text
-    bookname = bookname.split('::')[0].strip()
-    bookname = sanitize_filename(bookname)
-    return bookname
-
-
 def get_book_image_link(booksoup):
     image_path = booksoup.find('table', class_='d_book').find('img')['src']
     full_image_link = urljoin('https://tululu.org', image_path)
     if requests.get(full_image_link).content:
         return full_image_link
-
 
 
 def download_book_text(book_link, bookname):
@@ -57,18 +41,24 @@ def download_book_image(image_link):
         image.write(image_response.content)
 
 
-def get_comments(booksoup):
-    comments = [comment.span.text for comment in booksoup.find_all(
-        'div',
-        class_='texts')]
-    return comments
-
-
-def get_genre(booksoup):
-    genre = booksoup.find('span', class_='d_book').find('a')
-    return genre.text
-
-
+def parse_book_page(book_link):
+    book_response = requests.get(url=book_link)
+    check_redirect(book_response=book_response)
+    book_response.raise_for_status()
+    book_info = {}
+    booksoup = BeautifulSoup(book_response.text, 'lxml')
+    bookname = booksoup.find('body').find('table', class_='tabs').find('h1').text
+    bookname = bookname.split('::')[0].strip()
+    bookname = sanitize_filename(bookname)
+    book_info['bookname'] = bookname
+    comments = booksoup.find_all('div', class_='texts')
+    comments = [f'{comment.span.text}' for comment in comments]
+    book_info['comments'] = comments
+    genres = booksoup.find('span', class_='d_book').find_all('a')
+    genres = [genre.text for genre in genres]
+    book_info['genre'] = genres
+    return book_info
+    
 
 photos_path = 'books'
 Path(photos_path).mkdir(
@@ -82,18 +72,25 @@ Path(photos_path).mkdir(
     exist_ok=True,
 )
 
-for book_id in range(1, 11):
-    book_url = f'https://tululu.org/b{book_id}/'
-    downloading_book_url = f'https://tululu.org/txt.php?id={book_id}'
-    try:
-        booksoup = get_book_soup(book_link=book_url)
-    except requests.exceptions.HTTPError:
-        continue
-    genre = get_genre(booksoup=booksoup)
-    print(genre)
-    
+book_url = 'https://tululu.org/b9/'
+book_info = parse_book_page(book_link=book_url)
+
+
+
 
 """
+for book_id in range(1, 11):
+    book_url = f'https://tululu.org/b{book_id}/'
+    try:
+        comments = parse_book_page(book_link=book_url)
+    except requests.exceptions.HTTPError:
+        continue
+    print(comments)
+
+
+
+
+
     image_link = get_book_image_link(booksoup=booksoup)
     download_book_image(image_link=image_link)
     
