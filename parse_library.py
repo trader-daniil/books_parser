@@ -64,7 +64,11 @@ def get_comments(booksoup):
     return comments
 
 
-    
+def get_genre(booksoup):
+    genre = booksoup.find('span', class_='d_book').find('a')
+    return genre.text
+
+
 
 photos_path = 'books'
 Path(photos_path).mkdir(
@@ -85,12 +89,9 @@ for book_id in range(1, 11):
         booksoup = get_book_soup(book_link=book_url)
     except requests.exceptions.HTTPError:
         continue
-
-    bookname = get_book_name(booksoup=booksoup)
-    comments = get_comments(booksoup=booksoup)
-    print(bookname)
-    if comments:
-        print(comments)
+    genre = get_genre(booksoup=booksoup)
+    print(genre)
+    
 
 """
     image_link = get_book_image_link(booksoup=booksoup)
