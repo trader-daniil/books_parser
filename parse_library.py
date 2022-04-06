@@ -6,6 +6,7 @@ from urllib.parse import urljoin, urlsplit
 import requests
 from bs4 import BeautifulSoup
 from pathvalidate import sanitize_filename
+from tqdm import tqdm
 
 
 def check_redirect(book_response):
@@ -90,7 +91,7 @@ def main():
         parents=True,
         exist_ok=True,
     )
-    for book_id in range(args.start_id, args.end_id):
+    for book_id in tqdm(range(args.start_id, args.end_id)):
         book_url = f'https://tululu.org/b{book_id}/'
         try:
             book_response = requests.get(url=book_url)
