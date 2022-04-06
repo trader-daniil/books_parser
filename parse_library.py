@@ -20,13 +20,18 @@ def get_book_image_link(booksoup):
         return full_image_link
 
 
-def download_book_text(book_link, bookname):
-    book_response = requests.get(url=book_link)
+def download_book_text(bookname, book_id):
+    params = {'id': book_id}
+    downloading_book_url = 'https://tululu.org/txt.php'
+    book_response = requests.get(
+        url=downloading_book_url,
+        params=params,
+    )
     check_redirect(book_response=book_response)
     book_response.raise_for_status()
     book_path = f'books/{bookname}.txt'
-    with open(book_path, 'wb') as file:
-        file.write(book_response.content)
+    with open(book_path, 'w') as file:
+        file.write(book_response.text)
 
 
 def download_book_image(image_link):
@@ -47,22 +52,19 @@ def parse_book_page(booksoup):
         ).find('h1').text
     bookname = bookname.split('::')[0].strip()
     bookname = sanitize_filename(bookname)
-    book_info['bookname'] = bookname
     comments = booksoup.find_all('div', class_='texts')
-    comments = [f'{comment.span.text}' for comment in comments]
-    book_info['comments'] = comments
+    comments = [comment.span.text for comment in comments]
     genres = booksoup.find('span', class_='d_book').find_all('a')
     genres = [genre.text for genre in genres]
-    book_info['genres'] = genres
+    image_path = booksoup.find('table', class_='d_book').find('img')['src']
+    full_image_link = urljoin('https://tululu.org', image_path)
+    book_info = {
+        'bookname': bookname,
+        'comments': comments,
+        'genres': genres,
+        'image_link': full_image_link,
+    }
     return book_info
-
-
-def get_booksoup(book_link):
-    book_response = requests.get(url=book_link)
-    check_redirect(book_response=book_response)
-    book_response.raise_for_status()
-    booksoup = BeautifulSoup(book_response.text, 'lxml')
-    return booksoup
 
 
 def main():
@@ -78,8 +80,8 @@ def main():
         type=int
     )
     args = parser.parse_args()
-    photos_path = 'books'
-    Path(photos_path).mkdir(
+    books_path = 'books'
+    Path(books_path).mkdir(
         parents=True,
         exist_ok=True,
     )
@@ -90,29 +92,27 @@ def main():
     )
     for book_id in range(args.start_id, args.end_id):
         book_url = f'https://tululu.org/b{book_id}/'
-        downloading_book_url = f'https://tululu.org/txt.php?id={book_id}'
         try:
-            booksoup = get_booksoup(book_link=book_url)
-        except requests.exceptions.HTTPError:
-            continue
-        book_info = parse_book_page(booksoup=booksoup)
-        bookname = book_info['bookname']
-        comments = book_info['comments']
-        genres = book_info['genres']
-        try:
+            book_response = requests.get(url=book_url)
+            check_redirect(book_response=book_response)
+            book_response.raise_for_status()
+            booksoup = BeautifulSoup(book_response.text, 'lxml')
+            book_info = parse_book_page(booksoup=booksoup)
+            bookname = book_info['bookname']
+            comments = book_info['comments']
+            genres = book_info['genres']
+            image_link = book_info['image_link']
             download_book_text(
-                book_link=downloading_book_url,
+                book_id=book_id,
                 bookname=bookname,
             )
+            download_book_image(image_link=image_link)
         except requests.exceptions.HTTPError:
             continue
-        image_link = get_book_image_link(booksoup=booksoup)
-        download_book_image(image_link=image_link)
         print(bookname)
         print(('\n').join(comments))
         print((', ').join(genres), '\n')
 
-    
 
 if __name__ == '__main__':
     main()
