@@ -14,13 +14,6 @@ def check_redirect(book_response):
         raise requests.exceptions.HTTPError
 
 
-def get_book_image_link(booksoup):
-    image_path = booksoup.find('table', class_='d_book').find('img')['src']
-    full_image_link = urljoin('https://tululu.org', image_path)
-    if requests.get(full_image_link).content:
-        return full_image_link
-
-
 def download_book_text(bookname, book_id):
     params = {'id': book_id}
     downloading_book_url = 'https://tululu.org/txt.php'
