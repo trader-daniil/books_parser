@@ -2,7 +2,11 @@ import requests
 import argparse
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
-from parse_library import check_redirect, download_book_text, parse_book_page, download_book_image
+from parse_library import (
+                           check_redirect,
+                           download_book_text,
+                           parse_book_page,
+                           download_book_image)
 from pathlib import Path
 import json
 import os
@@ -60,7 +64,7 @@ def main():
     all_books_ids = []
     books_with_info = []
     fantasy_books = 'https://tululu.org/l55/'
-    for page_num in  tqdm(range(args.start_page, args.end_page)):
+    for page_num in tqdm(range(args.start_page, args.end_page)):
         fantasy_books_page = urljoin(fantasy_books, str(page_num))
         books_links = get_books_ids(category_link=fantasy_books_page)
         all_books_ids += books_links
@@ -92,7 +96,7 @@ def main():
             image_link = book_info['image_link']
             filename, image_extension = os.path.splitext(image_link)
             image_name = bookname + image_extension
-            book_data['img_src'] =  image_name
+            book_data['img_src'] = image_name
             image_path = os.path.join(photos_path, image_name)
             download_book_image(
                 image_link=image_link,
@@ -100,8 +104,12 @@ def main():
             )
         except requests.exceptions.HTTPError:
             continue
-    with open(f'{args.dest_folder}/books_info.json', "a", encoding='utf8') as my_file:
-        json.dump(books_with_info, my_file, ensure_ascii=False, indent = 4)
+    with open(
+        f'{args.dest_folder}/books_info.json',
+        "a",
+        encoding='utf8',
+    ) as my_file:
+        json.dump(books_with_info, my_file, ensure_ascii=False, indent=4)
 
 
 if __name__ == '__main__':
