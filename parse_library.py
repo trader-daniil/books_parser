@@ -15,7 +15,7 @@ def check_redirect(book_response):
         raise requests.exceptions.HTTPError
 
 
-def download_book_text(bookname, book_id):
+def download_book_text(books_path, book_id, bookname):
     params = {'id': book_id}
     downloading_book_url = 'https://tululu.org/txt.php?id=1'
     book_response = requests.get(
@@ -24,16 +24,15 @@ def download_book_text(bookname, book_id):
     )
     check_redirect(book_response=book_response)
     book_response.raise_for_status()
-    book_path = f'books/{bookname}.txt'
+    book_path = f'{books_path}/{bookname}.txt'
     with open(book_path, 'wb') as file:
         file.write(book_response.content)
 
 
-def download_book_image(image_link, image_name):
+def download_book_image(image_link, image_path):
     image_response = requests.get(url=image_link)
     check_redirect(book_response=image_response)
     image_response.raise_for_status()
-    image_path = os.path.join('images', image_name)
     with open(image_path, 'wb') as image:
         image.write(image_response.content)
 
@@ -73,13 +72,26 @@ def main():
         default=10,
         type=int
     )
+    parser.add_argument(
+        '--skip_imgs',
+        action='store_true',
+    )
+    parser.add_argument(
+        '--skip_txt',
+        action='store_true',
+    )
+    parser.add_argument(
+        '--dest_folder',
+        default='data_books',
+        type=str,
+    )
     args = parser.parse_args()
-    books_path = 'books'
+    books_path = f'{args.dest_folder}/books'
     Path(books_path).mkdir(
         parents=True,
         exist_ok=True,
     )
-    photos_path = 'images'
+    photos_path = f'{args.dest_folder}/images'
     Path(photos_path).mkdir(
         parents=True,
         exist_ok=True,
@@ -96,16 +108,22 @@ def main():
             comments = book_info['comments']
             author = book_info['author']
             genres = book_info['genres']
+            if not args.skip_txt:
+                download_book_text(
+                    books_path=books_path,
+                    book_id=book_id,
+                    bookname=bookname,
+                )
+
+            if args.skip_imgs:
+                continue
             image_link = book_info['image_link']
             filename, image_extension = os.path.splitext(image_link)
             image_name = bookname + image_extension
-            download_book_text(
-                book_id=book_id,
-                bookname=bookname,
-            )
+            image_path = os.path.join(photos_path, image_name)
             download_book_image(
                 image_link=image_link,
-                image_name=image_name,
+                image_path=image_path,
             )
         except requests.exceptions.HTTPError:
             continue

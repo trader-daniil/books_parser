@@ -33,13 +33,26 @@ def main():
         default=2,
         type=int
     )
+    parser.add_argument(
+        '--dest_folder',
+        default='data_books',
+        type=str,
+    )
+    parser.add_argument(
+        '--skip_imgs',
+        action='store_true',
+    )
+    parser.add_argument(
+        '--skip_txt',
+        action='store_true',
+    )
     args = parser.parse_args()
-    books_path = 'books'
+    books_path = f'{args.dest_folder}/books'
     Path(books_path).mkdir(
         parents=True,
         exist_ok=True,
     )
-    photos_path = 'images'
+    photos_path = f'{args.dest_folder}/images'
     Path(photos_path).mkdir(
         parents=True,
         exist_ok=True,
@@ -61,28 +74,33 @@ def main():
             booksoup = BeautifulSoup(book_response.text, 'lxml')
             book_info = parse_book_page(booksoup=booksoup)
             bookname = book_info['bookname']
-            image_link = book_info['image_link']
-            filename, image_extension = os.path.splitext(image_link)
-            image_name = bookname + image_extension
             book_data = {
                 'title': bookname,
                 'author': book_info['author'],
                 'genres': book_info['genres'],
                 'comments': book_info['comments'],
-                'img_src': image_name,
             }
             books_with_info.append(book_data)
-            download_book_text(
-                book_id=book_id,
-                bookname=bookname,
-            )
+            if not args.skip_txt:
+                download_book_text(
+                    books_path=books_path,
+                    book_id=book_id,
+                    bookname=bookname,
+                )
+            if args.skip_imgs:
+                continue
+            image_link = book_info['image_link']
+            filename, image_extension = os.path.splitext(image_link)
+            image_name = bookname + image_extension
+            book_data['img_src'] =  image_name
+            image_path = os.path.join(photos_path, image_name)
             download_book_image(
                 image_link=image_link,
-                image_name=image_name,
+                image_path=image_path,
             )
         except requests.exceptions.HTTPError:
             continue
-    with open("books_info.json", "a", encoding='utf8') as my_file:
+    with open(f'{args.dest_folder}/books_info.json', "a", encoding='utf8') as my_file:
         json.dump(books_with_info, my_file, ensure_ascii=False, indent = 4)
 
 
