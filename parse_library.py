@@ -2,6 +2,7 @@ import argparse
 import os
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit
+import json
 
 import requests
 from bs4 import BeautifulSoup
@@ -16,7 +17,7 @@ def check_redirect(book_response):
 
 def download_book_text(bookname, book_id):
     params = {'id': book_id}
-    downloading_book_url = 'https://tululu.org/txt.php'
+    downloading_book_url = 'https://tululu.org/txt.php?id=1'
     book_response = requests.get(
         url=downloading_book_url,
         params=params,
@@ -24,15 +25,14 @@ def download_book_text(bookname, book_id):
     check_redirect(book_response=book_response)
     book_response.raise_for_status()
     book_path = f'books/{bookname}.txt'
-    with open(book_path, 'w') as file:
-        file.write(book_response.text)
+    with open(book_path, 'wb') as file:
+        file.write(book_response.content)
 
 
-def download_book_image(image_link):
+def download_book_image(image_link, image_name):
     image_response = requests.get(url=image_link)
     check_redirect(book_response=image_response)
     image_response.raise_for_status()
-    image_name = urlsplit(image_link).path.split('/')[-1]
     image_path = os.path.join('images', image_name)
     with open(image_path, 'wb') as image:
         image.write(image_response.content)
@@ -44,6 +44,7 @@ def parse_book_page(booksoup):
         'table',
         class_='tabs',
         ).find('h1').text
+    author = bookname.split('::')[-1].strip()
     bookname = bookname.split('::')[0].strip()
     bookname = sanitize_filename(bookname)
     comments = booksoup.find_all('div', class_='texts')
@@ -57,6 +58,7 @@ def parse_book_page(booksoup):
         'comments': comments,
         'genres': genres,
         'image_link': full_image_link,
+        'author': author,
     }
     return book_info
 
@@ -70,7 +72,7 @@ def main():
     )
     parser.add_argument(
         '--end_id',
-        default=11,
+        default=10,
         type=int
     )
     args = parser.parse_args()
@@ -94,16 +96,23 @@ def main():
             book_info = parse_book_page(booksoup=booksoup)
             bookname = book_info['bookname']
             comments = book_info['comments']
+            author = book_info['author']
             genres = book_info['genres']
             image_link = book_info['image_link']
+            filename, image_extension = os.path.splitext(image_link)
+            image_name = bookname + image_extension
             download_book_text(
                 book_id=book_id,
                 bookname=bookname,
             )
-            download_book_image(image_link=image_link)
+            download_book_image(
+                image_link=image_link,
+                image_name=image_name,
+            )
         except requests.exceptions.HTTPError:
             continue
         print(bookname)
+        print(author)
         print(('\n').join(comments))
         print((', ').join(genres), '\n')
 
