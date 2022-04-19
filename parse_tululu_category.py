@@ -1,10 +1,12 @@
 import requests
+import argparse
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 from parse_library import check_redirect, download_book_text, parse_book_page, download_book_image
 from pathlib import Path
 import json
 import os
+from tqdm import tqdm
 
 
 def get_books_ids(category_link):
@@ -12,14 +14,26 @@ def get_books_ids(category_link):
     response = requests.get(url=category_link)
     response.raise_for_status()
     genresoup = BeautifulSoup(response.text, 'lxml')
-    all_links = genresoup.find_all('div', class_='bookimage')
+    all_links = genresoup.select('div.bookimage')
     for link in all_links:
-        booklink = link.find('a')['href']
+        booklink = link.select_one('a')['href']
         all_hrefs.append(booklink[2:])
     return all_hrefs
 
 
 def main():
+    parser = argparse.ArgumentParser(description='Программа скачивает книги')
+    parser.add_argument(
+        '--start_page',
+        default=1,
+        type=int
+    )
+    parser.add_argument(
+        '--end_page',
+        default=2,
+        type=int
+    )
+    args = parser.parse_args()
     books_path = 'books'
     Path(books_path).mkdir(
         parents=True,
@@ -33,11 +47,11 @@ def main():
     all_books_ids = []
     books_with_info = []
     fantasy_books = 'https://tululu.org/l55/'
-    for page_num in range(1, 5):
+    for page_num in  tqdm(range(args.start_page, args.end_page)):
         fantasy_books_page = urljoin(fantasy_books, str(page_num))
         books_links = get_books_ids(category_link=fantasy_books_page)
         all_books_ids += books_links
-    for book_id in all_books_ids:
+    for book_id in tqdm(all_books_ids):
         book_url = f'https://tululu.org/b{book_id}'
         book_response = requests.get(url=book_url)
         try:

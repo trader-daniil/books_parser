@@ -40,18 +40,16 @@ def download_book_image(image_link, image_name):
 
 def parse_book_page(booksoup):
     book_info = {}
-    bookname = booksoup.find('body').find(
-        'table',
-        class_='tabs',
-        ).find('h1').text
+    bookselector = 'body .tabs h1'
+    bookname = booksoup.select_one(bookselector).text
     author = bookname.split('::')[-1].strip()
     bookname = bookname.split('::')[0].strip()
     bookname = sanitize_filename(bookname)
-    comments = booksoup.find_all('div', class_='texts')
+    comments = booksoup.select('div.texts')
     comments = [comment.span.text for comment in comments]
-    genres = booksoup.find('span', class_='d_book').find_all('a')
+    genres = booksoup.select('span.d_book a')
     genres = [genre.text for genre in genres]
-    image_path = booksoup.find('table', class_='d_book').find('img')['src']
+    image_path = booksoup.select_one('table.d_book img')['src']
     full_image_link = urljoin('https://tululu.org', image_path)
     book_info = {
         'bookname': bookname,
