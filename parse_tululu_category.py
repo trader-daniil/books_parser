@@ -25,8 +25,18 @@ def get_books_ids(category_link):
     return hrefs
 
 
+def get_total_pages(tululu_link):
+    paginator_selector = 'table.tabs p.center a'
+    response = requests.get(url=tululu_link)
+    pagesoup = BeautifulSoup(response.text, 'lxml')
+    paginator = pagesoup.select(paginator_selector)
+    return paginator[-1].text
+
+
 def main():
     parser = argparse.ArgumentParser(description='Программа скачивает книги')
+    fantasy_books_url = 'https://tululu.org/l55/'
+    total_pages = get_total_pages(tululu_link=fantasy_books_url)
     parser.add_argument(
         '--start_page',
         default=1,
@@ -34,7 +44,7 @@ def main():
     )
     parser.add_argument(
         '--end_page',
-        default=2,
+        default=total_pages,
         type=int
     )
     parser.add_argument(
@@ -63,9 +73,8 @@ def main():
     )
     books_ids = []
     books_with_info = []
-    fantasy_books = 'https://tululu.org/l55/'
     for page_num in tqdm(range(args.start_page, args.end_page)):
-        fantasy_books_page = urljoin(fantasy_books, str(page_num))
+        fantasy_books_page = urljoin(fantasy_books_url, str(page_num))
         page_books_ids = get_books_ids(category_link=fantasy_books_page)
         books_ids += page_books_ids
     for book_id in tqdm(books_ids):
@@ -78,13 +87,6 @@ def main():
             booksoup = BeautifulSoup(book_response.text, 'lxml')
             book_info = parse_book_page(booksoup=booksoup)
             bookname = book_info['bookname']
-            book_data = {
-                'title': bookname,
-                'author': book_info['author'],
-                'genres': book_info['genres'],
-                'comments': book_info['comments'],
-            }
-            books_with_info.append(book_data)
             if not args.skip_txt:
                 download_book_text(
                     books_path=books_path,
@@ -96,20 +98,21 @@ def main():
             image_link = book_info['image_link']
             filename, image_extension = os.path.splitext(image_link)
             image_name = bookname + image_extension
-            book_data['img_src'] = image_name
+            book_info['img_src'] = f'images/{image_name}'
             image_path = os.path.join(photos_path, image_name)
             download_book_image(
                 image_link=image_link,
                 image_path=image_path,
             )
+            books_with_info.append(book_info)
         except requests.exceptions.HTTPError:
             continue
     with open(
         f'{args.dest_folder}/books_info.json',
-        "a",
+        "w",
         encoding='utf8',
-    ) as my_file:
-        json.dump(books_with_info, my_file, ensure_ascii=False, indent=4)
+    ) as file:
+        json.dump(books_with_info, file, ensure_ascii=False, indent=4)
 
 
 if __name__ == '__main__':
