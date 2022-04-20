@@ -14,15 +14,15 @@ from tqdm import tqdm
 
 
 def get_books_ids(category_link):
-    all_hrefs = []
+    hrefs = []
     response = requests.get(url=category_link)
     response.raise_for_status()
     genresoup = BeautifulSoup(response.text, 'lxml')
-    all_links = genresoup.select('div.bookimage')
-    for link in all_links:
+    links = genresoup.select('div.bookimage')
+    for link in links:
         booklink = link.select_one('a')['href']
-        all_hrefs.append(booklink[2:])
-    return all_hrefs
+        hrefs.append(booklink[2:])
+    return hrefs
 
 
 def main():
@@ -61,14 +61,14 @@ def main():
         parents=True,
         exist_ok=True,
     )
-    all_books_ids = []
+    books_ids = []
     books_with_info = []
     fantasy_books = 'https://tululu.org/l55/'
     for page_num in tqdm(range(args.start_page, args.end_page)):
         fantasy_books_page = urljoin(fantasy_books, str(page_num))
-        books_links = get_books_ids(category_link=fantasy_books_page)
-        all_books_ids += books_links
-    for book_id in tqdm(all_books_ids):
+        page_books_ids = get_books_ids(category_link=fantasy_books_page)
+        books_ids += page_books_ids
+    for book_id in tqdm(books_ids):
         book_url = f'https://tululu.org/b{book_id}'
         book_response = requests.get(url=book_url)
         try:
