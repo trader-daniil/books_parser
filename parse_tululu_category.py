@@ -28,6 +28,7 @@ def get_books_ids(category_link):
 def get_total_pages(tululu_link):
     paginator_selector = 'table.tabs p.center a'
     response = requests.get(url=tululu_link)
+    response.raise_for_status()
     pagesoup = BeautifulSoup(response.text, 'lxml')
     paginator = pagesoup.select(paginator_selector)
     return paginator[-1].text
@@ -79,7 +80,6 @@ def main():
         books_ids += page_books_ids
     for book_id in tqdm(books_ids):
         book_url = f'https://tululu.org/b{book_id}'
-        book_response = requests.get(url=book_url)
         try:
             book_response = requests.get(url=book_url)
             check_redirect(book_response=book_response)
@@ -98,7 +98,7 @@ def main():
             image_link = book_info['image_link']
             filename, image_extension = os.path.splitext(image_link)
             image_name = bookname + image_extension
-            book_info['img_src'] = f'images/{image_name}'
+            book_info['img_src'] = f'{args.dest_folder}/images/{image_name}'
             image_path = os.path.join(photos_path, image_name)
             download_book_image(
                 image_link=image_link,

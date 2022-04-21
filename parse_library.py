@@ -1,7 +1,8 @@
 import argparse
 import os
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import urljoin, quote
+
 
 import requests
 from bs4 import BeautifulSoup
@@ -90,7 +91,7 @@ def main():
         parents=True,
         exist_ok=True,
     )
-    photos_path = f'{args.dest_folder}/images'
+    photos_path = f'{args.dest_folder}/images/'
     Path(photos_path).mkdir(
         parents=True,
         exist_ok=True,
