@@ -1,4 +1,5 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
+from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import json
@@ -14,8 +15,7 @@ template = env.get_template('index.html')
 with open("data_books/books_info.json", "r", encoding="utf-8") as write_file:
     books_info = write_file.read()
 books_info = json.loads(books_info)
-books_info = list(chunked(books_info, 2))
-
+books_info = list(chunked(books_info, 5))
 
 
 def on_reload(template, data, filename):
@@ -25,14 +25,22 @@ def on_reload(template, data, filename):
 
 
 def main():
-    server = Server()
-    server.watch(
-        'page_with_books.html',
-        on_reload(
-            template=template,
-            data=books_info,
-            filename='page_with_books.html'),
+    pages_path = 'pages'
+    Path(pages_path).mkdir(
+        parents=True,
+        exist_ok=True,
     )
+    server = Server()
+    for books_num, books in enumerate(books_info):
+        file_with_books_path = f'pages/page_with_books{books_num}.html'
+        books_list = list(chunked(books, 2))
+        server.watch(
+            file_with_books_path,
+            on_reload(
+                template=template,
+                data=books_list,
+                filename=file_with_books_path),
+        )
     server.serve(root='.')
 
 if __name__ == '__main__':
