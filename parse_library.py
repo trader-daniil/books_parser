@@ -15,7 +15,7 @@ def check_redirect(book_response):
         raise requests.exceptions.HTTPError
 
 
-def download_book_text(books_path, book_id, bookname):
+def download_book_text(book_path, book_id):
     params = {'id': book_id}
     downloading_book_url = 'https://tululu.org/txt.php?id=1'
     book_response = requests.get(
@@ -24,7 +24,6 @@ def download_book_text(books_path, book_id, bookname):
     )
     check_redirect(book_response=book_response)
     book_response.raise_for_status()
-    book_path = f'{books_path}/{bookname}.txt'
     with open(book_path, 'wb') as file:
         file.write(book_response.content)
 
@@ -109,12 +108,11 @@ def main():
             author = book_info['author']
             genres = book_info['genres']
             if not args.skip_txt:
+                book_path = f'{books_path}/{bookname}.txt'
                 download_book_text(
-                    books_path=books_path,
+                    book_path=book_path,
                     book_id=book_id,
-                    bookname=bookname,
                 )
-
             if args.skip_imgs:
                 continue
             image_link = book_info['image_link']

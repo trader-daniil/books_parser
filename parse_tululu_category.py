@@ -87,11 +87,12 @@ def main():
             booksoup = BeautifulSoup(book_response.text, 'lxml')
             book_info = parse_book_page(booksoup=booksoup)
             bookname = book_info['bookname']
+            book_path = f'{books_path}/{bookname}.txt'
             if not args.skip_txt:
+                book_info['txt_path'] = book_path
                 download_book_text(
-                    books_path=books_path,
+                    book_path=book_path,
                     book_id=book_id,
-                    bookname=bookname,
                 )
             if args.skip_imgs:
                 continue

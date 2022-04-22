@@ -13,6 +13,7 @@
         ],
         "image_link": "https://tululu.org/shots/239.jpg",
         "author": "ИВАНОВ Сергей",
+        "txt_path": "data_books/books/Алиби.txt",
         "img_src": "data_books/images/Алиби.jpg"
     },
     {
@@ -33,6 +34,7 @@
         ],
         "image_link": "https://tululu.org/shots/550.jpg",
         "author": "Стерлинг Брюс",
+        "txt_path": "data_books/books/Бич небесный.txt",
         "img_src": "data_books/images/Бич небесный.jpg"
     },
     {
@@ -47,6 +49,7 @@
         ],
         "image_link": "https://tululu.org/shots/768.jpg",
         "author": "Маркеев Олег Георгиевич",
+        "txt_path": "data_books/books/Цена посвящения Серый Ангел.txt",
         "img_src": "data_books/images/Цена посвящения Серый Ангел.jpg"
     },
     {
@@ -62,6 +65,7 @@
         ],
         "image_link": "https://tululu.org/shots/769.jpg",
         "author": "Маркеев Олег Георгиевич",
+        "txt_path": "data_books/books/Цена посвящения Время Зверя.txt",
         "img_src": "data_books/images/Цена посвящения Время Зверя.jpg"
     },
     {
@@ -73,6 +77,7 @@
         ],
         "image_link": "https://tululu.org/shots/1131.jpg",
         "author": "Fforde Jasper",
+        "txt_path": "data_books/books/Дело Джен, или Эйра немилосердия.txt",
         "img_src": "data_books/images/Дело Джен, или Эйра немилосердия.jpg"
     },
     {
@@ -90,6 +95,7 @@
         ],
         "image_link": "https://tululu.org/shots/1715.jpg",
         "author": "Мар Курт",
+        "txt_path": "data_books/books/Фабрика дьявола.txt",
         "img_src": "data_books/images/Фабрика дьявола.jpg"
     },
     {
@@ -110,6 +116,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Азимов Айзек",
+        "txt_path": "data_books/books/Говорящий камень.txt",
         "img_src": "data_books/images/Говорящий камень.gif"
     },
     {
@@ -142,6 +149,7 @@
         ],
         "image_link": "https://tululu.org/shots/2043.jpg",
         "author": "Аджалов Владимир",
+        "txt_path": "data_books/books/И Он пришел... ИТ-роман.txt",
         "img_src": "data_books/images/И Он пришел... ИТ-роман.jpg"
     },
     {
@@ -155,6 +163,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Чертанов Максим",
+        "txt_path": "data_books/books/Казнить нельзя помиловать.txt",
         "img_src": "data_books/images/Казнить нельзя помиловать.gif"
     },
     {
@@ -175,6 +184,7 @@
         ],
         "image_link": "https://tululu.org/shots/4024.jpg",
         "author": "Азимов Айзек",
+        "txt_path": "data_books/books/Ночь, которая умирает.txt",
         "img_src": "data_books/images/Ночь, которая умирает.jpg"
     },
     {
@@ -189,6 +199,7 @@
         ],
         "image_link": "https://tululu.org/shots/4102.jpg",
         "author": "Хенрик Ричард",
+        "txt_path": "data_books/books/Нырок в забвение.txt",
         "img_src": "data_books/images/Нырок в забвение.jpg"
     },
     {
@@ -204,6 +215,7 @@
         ],
         "image_link": "https://tululu.org/shots/4876.jpg",
         "author": "Азимов Айзек",
+        "txt_path": "data_books/books/Поющий колокольчик.txt",
         "img_src": "data_books/images/Поющий колокольчик.jpg"
     },
     {
@@ -222,6 +234,7 @@
         ],
         "image_link": "https://tululu.org/shots/5299.jpg",
         "author": "Аджалов Владимир Исфандеярович",
+        "txt_path": "data_books/books/Продается тело Христа.txt",
         "img_src": "data_books/images/Продается тело Христа.jpg"
     },
     {
@@ -234,6 +247,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Патрацкая Наталья",
+        "txt_path": "data_books/books/Роковой поцелуй.txt",
         "img_src": "data_books/images/Роковой поцелуй.gif"
     },
     {
@@ -254,6 +268,7 @@
         ],
         "image_link": "https://tululu.org/shots/6758.jpg",
         "author": "Руденко Борис",
+        "txt_path": "data_books/books/Те, кто против нас.txt",
         "img_src": "data_books/images/Те, кто против нас.jpg"
     },
     {
@@ -265,6 +280,7 @@
         ],
         "image_link": "https://tululu.org/shots/6766.jpg",
         "author": "Мар Курт",
+        "txt_path": "data_books/books/Телепортеры, внимание!.txt",
         "img_src": "data_books/images/Телепортеры, внимание!.jpg"
     },
     {
@@ -278,6 +294,7 @@
         ],
         "image_link": "https://tululu.org/shots/8283.jpg",
         "author": "Стивенсон Нил",
+        "txt_path": "data_books/books/Зодиак.txt",
         "img_src": "data_books/images/Зодиак.jpg"
     },
     {
@@ -289,6 +306,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Картман Эрика",
+        "txt_path": "data_books/books/Justitia - est Часть 1.txt",
         "img_src": "data_books/images/Justitia - est Часть 1.gif"
     },
     {
@@ -319,6 +337,7 @@
         ],
         "image_link": "https://tululu.org/shots/8902.jpg",
         "author": "Хайнлайн Роберт",
+        "txt_path": "data_books/books/Астронавт Джонс.txt",
         "img_src": "data_books/images/Астронавт Джонс.jpg"
     },
     {
@@ -341,6 +360,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Хайнлайн Роберт",
+        "txt_path": "data_books/books/Будет скафандр - будут и путешествия.txt",
         "img_src": "data_books/images/Будет скафандр - будут и путешествия.gif"
     },
     {
@@ -363,6 +383,7 @@
         ],
         "image_link": "https://tululu.org/shots/9402.jpg",
         "author": "Семенова Татьяна",
+        "txt_path": "data_books/books/Дочь Нефертити.txt",
         "img_src": "data_books/images/Дочь Нефертити.jpg"
     },
     {
@@ -379,6 +400,7 @@
         ],
         "image_link": "https://tululu.org/shots/10768.jpg",
         "author": "Семенова Татьяна",
+        "txt_path": "data_books/books/Наложница императора.txt",
         "img_src": "data_books/images/Наложница императора.jpg"
     },
     {
@@ -401,6 +423,7 @@
         ],
         "image_link": "https://tululu.org/shots/10923.jpg",
         "author": "Белохвостов Денис",
+        "txt_path": "data_books/books/Общая теория Доминант.txt",
         "img_src": "data_books/images/Общая теория Доминант.jpg"
     }
 ]
