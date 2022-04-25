@@ -11,6 +11,40 @@
     <title>Hello, world!</title>
   </head>
   <body>
+    <div class="mx-auto" style="width: 200px;">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          {% if pages_info.page_num==1 %}
+          <li class="page-item disabled">
+            <a class="page-link" href="page_with_books{{ pages_info.prev_page }}.html" tabindex="-1" aria-disabled="true">Назад</a>
+          </li>
+          {% else %}
+            <li class="page-item">
+              <a class="page-link" href="page_with_books{{ pages_info.prev_page }}.html">Назад</a>
+          {% endif %}
+          {% for page in range(1, pages_info.pages_amount) %}
+            {% if page==pages_info.page_num %}
+              <li class="page-item active" aria-current="page">
+                <a class="page-link" href="page_with_books{{ pages_info.page_num }}.html">{{ pages_info.page_num }}<span class="sr-only">(current)</span></a>
+              </li>
+            {% else %}
+              <li class="page-item">
+                <a class="page-link" href="page_with_books{{ page }}.html">{{ page }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          {% if pages_info.page_num==pages_info.pages_amount - 1 %}
+            <li class="page-item disabled">
+              <a class="page-link" href="page_with_books{{ pages_info.next_page }}.html" tabindex="-1" aria-disabled="true">Вперед</a>
+            </li>
+          {% else %}
+            <li class="page-item">
+              <a class="page-link" href="page_with_books{{ pages_info.next_page }}.html">Вперед</a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
     {% for books in books_info %}
       <div class="container">
         <div class="row">
