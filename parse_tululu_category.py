@@ -105,6 +105,8 @@ def main():
                 image_link=image_link,
                 image_path=image_path,
             )
+            if os.path.getsize(image_path) < 5000:
+                book_info['img_src'] = 'static/book_image_for_none.jpg'
             books_with_info.append(book_info)
         except requests.exceptions.HTTPError:
             continue

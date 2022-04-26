@@ -117,7 +117,7 @@
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Азимов Айзек",
         "txt_path": "data_books/books/Говорящий камень.txt",
-        "img_src": "data_books/images/Говорящий камень.gif"
+        "img_src": "static/book_image_for_none.jpg"
     },
     {
         "bookname": "И Он пришел... ИТ-роман",
@@ -164,7 +164,7 @@
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Чертанов Максим",
         "txt_path": "data_books/books/Казнить нельзя помиловать.txt",
-        "img_src": "data_books/images/Казнить нельзя помиловать.gif"
+        "img_src": "static/book_image_for_none.jpg"
     },
     {
         "bookname": "Ночь, которая умирает",
@@ -248,7 +248,7 @@
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Патрацкая Наталья",
         "txt_path": "data_books/books/Роковой поцелуй.txt",
-        "img_src": "data_books/images/Роковой поцелуй.gif"
+        "img_src": "static/book_image_for_none.jpg"
     },
     {
         "bookname": "Те, кто против нас",
@@ -307,7 +307,7 @@
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Картман Эрика",
         "txt_path": "data_books/books/Justitia - est Часть 1.txt",
-        "img_src": "data_books/images/Justitia - est Часть 1.gif"
+        "img_src": "static/book_image_for_none.jpg"
     },
     {
         "bookname": "Астронавт Джонс",
@@ -361,7 +361,7 @@
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Хайнлайн Роберт",
         "txt_path": "data_books/books/Будет скафандр - будут и путешествия.txt",
-        "img_src": "data_books/images/Будет скафандр - будут и путешествия.gif"
+        "img_src": "static/book_image_for_none.jpg"
     },
     {
         "bookname": "Дочь Нефертити",
@@ -425,5 +425,608 @@
         "author": "Белохвостов Денис",
         "txt_path": "data_books/books/Общая теория Доминант.txt",
         "img_src": "data_books/images/Общая теория Доминант.jpg"
+    },
+    {
+        "bookname": "Взгляд из сердца",
+        "comments": [],
+        "genres": [
+            "Детская проза",
+            "Детская фантастика",
+            "Научная фантастика",
+            "Прочая детская литература",
+            "Эзотерика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Мейстер Максим",
+        "txt_path": "data_books/books/Взгляд из сердца.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "Звездный зверь ( Звездное чудовище)",
+        "comments": [
+            "Хорошая книжка.",
+            "Ксенофобия, ненависть ко всему тому что не хочется понимать, может привести к гибели чедовечество. Эта тема актуальна сейчас и скорее всего будет актуальна еще очень долго.",
+            "Рекомендую всем!!!!!!!!!!!"
+        ],
+        "genres": [
+            "Детская фантастика",
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/shots/13038.jpg",
+        "author": "Хайнлайн Роберт",
+        "txt_path": "data_books/books/Звездный зверь ( Звездное чудовище).txt",
+        "img_src": "data_books/images/Звездный зверь ( Звездное чудовище).jpg"
+    },
+    {
+        "bookname": "Сборник рассказов и повестей",
+        "comments": [],
+        "genres": [
+            "Научная фантастика",
+            "Публицистика",
+            "Юмористическая фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "ЛУКИНА Любовь",
+        "txt_path": "data_books/books/Сборник рассказов и повестей.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "...Яко помниши его",
+        "comments": [
+            "все просто супер",
+            "НИШТЯК-КНИГА",
+            "отличная книга!!!",
+            "короткая!",
+            "интересно))) да уж, никогда не думала, что так может оказаться))",
+            "Мне понравилось)",
+            "Кажется фильм с таким названием есть, но там все интересней.",
+            "Всегда нравились книги Айзека, отличное произведение, кстати, фильм так себе.",
+            "С одной стороны, все, что создано человеком призвано помогать ему безвозмездно. С другой, человек - неблагодарная сволочь. Третий аспект (с оглядкой на продолжение) - яблоко от яблони...",
+            "Коротка, но довольна хорошая книга, советую её прочитать!!!",
+            "А по этой книге снят фильм? Там еще Уилл Смит играет...",
+            "ДО СИХ ПОР ИНТЕРЕСНО.",
+            "Спасибо за возможность читать Ваши книги.",
+            "Я не перестаю удивляться.",
+            "Очень интересная.",
+            "Книга понравилась, заставляет задуматься об интеллекте, морали человека, о том как все относительно и как хрупок мир...",
+            "Хорошая книга. К админам, не плохо было бы если бы вы прописали год выхода книги в печать. Спасибо."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/shots/18919.jpg",
+        "author": "Азимов Айзек",
+        "txt_path": "data_books/books/...Яко помниши его.txt",
+        "img_src": "data_books/images/...Яко помниши его.jpg"
+    },
+    {
+        "bookname": "...На Вавилон",
+        "comments": [
+            "Отличный рассказ.",
+            "Этот рассказ захватывает с первого до последнего момента, почитайте, поймете, чем он интересен. Советую.",
+            "Да. Необычно, но впечатляет именно своей небычностью.",
+            "Может в рассказе и есть какой-то глубокий смысл, но я его не уловил. Прмойму просто муть.",
+            "Интересно, но концовка разочаровала... Ожидала большего."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Силверберг Роберт",
+        "txt_path": "data_books/books/...На Вавилон.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "...Вставьте шплинт А в гнездо Б",
+        "comments": [
+            "Да уж, история на одну минуту. Сюжет простейший, ничего необычного, но улыбнуло))",
+            "Хорошия история. Прочитал, улыбнулся и, наверное, забыл. Но, рассказ очень милый...",
+            "классно))) коротенько, но мило)) прочитала за минуты две=) Да уж, робот, собирающий всевозможные механизмы, сам в разобранном состоянии)",
+            "Хи-хи... У Айзека с чувством юмора всё в порядке.",
+            "Согласна, пошутил клёво.",
+            "Так жалко стало этих двоих...)))",
+            "Вообще чушь какая то. О каком юморе толковали непонятно.",
+            "Почитайте на досуге или так, мимоходом, улыбнитесь:)",
+            "Да, идея не нова, не раз втречалось, но это как анекдоты с общим смыслом но разным сюжетом - все они смешные.",
+            "Добрая улыбка Мастера... Приято читать, черт возьми...",
+            "Азимов гениален в простоте и юморе.",
+            "Хорошая книга.",
+            "Lokonicno."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/shots/18921.jpg",
+        "author": "Азимов Айзек",
+        "txt_path": "data_books/books/...Вставьте шплинт А в гнездо Б.txt",
+        "img_src": "data_books/images/...Вставьте шплинт А в гнездо Б.jpg"
+    },
+    {
+        "bookname": "...к звездам!",
+        "comments": [
+            "Спасибо за полученное удовольствие."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Радутный Радий",
+        "txt_path": "data_books/books/...к звездам!.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "1-книга. Весна на Галане",
+        "comments": [
+            "Если честно, то слишком растянуто и нудновато. А в общем, идея понравилась, можно почитать, разок.",
+            "Согласна. Есть интересные моменты, но явный перебор по колличеству печатных знаков. Занудные описание роскоши, повтор на повторе. Автор выдохся в середине первой части. Эту книгу можно пролистать, останавливаясь на некоторых моментах.",
+            "Очень люблю фантастику. Автора пока не читала, надеюсь,- не разочарует!",
+            "А мне понравилось всё. Просто нужно читать не отвлекаясь, а не в метро:). Тогда полнее погружаешься в созданный мир, чему и способствует подробное описание."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Карр Алекс",
+        "txt_path": "data_books/books/1-книга. Весна на Галане.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "10-я книга. Варкенские перемены",
+        "comments": [
+            "Я ставлю 4."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Карр Алекс",
+        "txt_path": "data_books/books/10-я книга. Варкенские перемены.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "11-я книга. Рождение империи сенсетивов",
+        "comments": [
+            "Спасобо вам за это произведение!!!!!",
+            "Спасибо огромное, жду с нетерпением 16 книгу. Почему о вас нигде нет информации.? Пишете очень интересно-погрузилась в этот мир с удовольствием."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Карр Алекс",
+        "txt_path": "data_books/books/11-я книга. Рождение империи сенсетивов.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "13-я книга. Галанское сватовство",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Карр Алекс",
+        "txt_path": "data_books/books/13-я книга. Галанское сватовство.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "132-й",
+        "comments": [
+            "Хороший рассказ. Так и хочется этому штабному офицеру смазать по мурсалам... Сытый, чистый, самодовольный. Хорошо, что были и есть такие, как тот несуразный полковник.",
+            "Хороший рассказ, только жизненный, не фантастика.",
+            "Рассказ интересный и даже жизненный, поэтому тем более не понятно как он оказался в разделе фантастики!?",
+            "Очень хорошая книга. Жаль что сейчас всё больше капитанов и всё меньше полковников. Очень жаль...",
+            "Сейчас пол страны такие -вот капитаны. И молодежь такой воспитывается. Молодец Макаов!"
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Макаров Андрей",
+        "txt_path": "data_books/books/132-й.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "14-я книга. Барабаны Таланов",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Карр Алекс",
+        "txt_path": "data_books/books/14-я книга. Барабаны Таланов.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "15-я книга. Школа арханелов",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Карр Алекс",
+        "txt_path": "data_books/books/15-я книга. Школа арханелов.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "2-я книга. Сенсетивы Галана",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Карр Алекс",
+        "txt_path": "data_books/books/2-я книга. Сенсетивы Галана.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "4-я книга. Экспедиция на Голубой планетоид",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Карр Алекс",
+        "txt_path": "data_books/books/4-я книга. Экспедиция на Голубой планетоид.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "5-я книга. В подземельях Бидрупа",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Карр Алекс",
+        "txt_path": "data_books/books/5-я книга. В подземельях Бидрупа.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "53-я американская мечта",
+        "comments": [
+            "Полнейший бред по моему мнению.",
+            "Вы можете долго искать смысл в этом рассказе, но так и не найти. В этом, наверное, и была цель автора."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Салли Джейли",
+        "txt_path": "data_books/books/53-я американская мечта.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "6-я книга. Сражение за Бидруп",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Карр Алекс",
+        "txt_path": "data_books/books/6-я книга. Сражение за Бидруп.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "64-клеточный дурдом",
+        "comments": [
+            "Заставляет задуматься- человек против мной машины или наоборот. Понравится любителям шахматных игр- книга для вас."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Лейбер Фриц",
+        "txt_path": "data_books/books/64-клеточный дурдом.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "7-я книга. День Откровения",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Карр Алекс",
+        "txt_path": "data_books/books/7-я книга. День Откровения.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "8-я книга. Полет Уригленны",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Карр Алекс",
+        "txt_path": "data_books/books/8-я книга. Полет Уригленны.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "9-я книга. Тарат Зурбин",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Карр Алекс",
+        "txt_path": "data_books/books/9-я книга. Тарат Зурбин.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "90х60х90",
+        "comments": [
+            "Ни фантастики, ни фэнтези, обычный детектив... Про обычную жизненную ситуацию... Правда, пара диалогов заставили задуматься, но не более..."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Берендеев Кирилл",
+        "txt_path": "data_books/books/90х60х90.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "995-й святой",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Цветков Юрий",
+        "txt_path": "data_books/books/995-й святой.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А, Критика!",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Еськов Кирилл",
+        "txt_path": "data_books/books/А, Критика!.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "АНТОЛОГИЯ СКАНДИНАВСКОЙ ФАНТАСТИКИ",
+        "comments": [
+            "Занудная хоть и фантастика.",
+            "Правда занудная, хоть и фантастика.",
+            "Ну, занудная, ну, фантастика. А все равно интересно было прочитать.",
+            "Очень информативно и эмоционально содержательно))) Характеристика - \"занудно\", просто разжигает желание прочитать! Качаю!!!",
+            "Книга впечатляющая. Не сказать что очень интересная, но подходящего эпитета не подберу. Доведение идеи до л о г и ч н о г о абсурда. И вторая мысль, что человек может ко всему, к любым условиям привыкнуть. А не сам так следующее поколение. Человек слаб в смысле физических условий, но приспособляемость у него большая.",
+            "Поочеемуу занууудноо??? Для скаандинннааввии оооччееньь дажжее дииннаммиичнооо."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/shots/18949.jpg",
+        "author": "Бойе Карин",
+        "txt_path": "data_books/books/АНТОЛОГИЯ СКАНДИНАВСКОЙ ФАНТАСТИКИ.txt",
+        "img_src": "data_books/images/АНТОЛОГИЯ СКАНДИНАВСКОЙ ФАНТАСТИКИ.jpg"
+    },
+    {
+        "bookname": "А бог един",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Амнуэль Песах",
+        "txt_path": "data_books/books/А бог един.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А была ли тайна",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Купцов Василий",
+        "txt_path": "data_books/books/А была ли тайна.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А человек забудет",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Трусов Сергей",
+        "txt_path": "data_books/books/А человек забудет.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А что будет",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Браун Фредерик",
+        "txt_path": "data_books/books/А что будет.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А что с ними делать дальше",
+        "comments": [
+            "Этот расказ интересен тока короткий больно охота проду : )",
+            "Мне понравилось. Только я думала, что йоппы - это все-таки мы земляне.",
+            "Очень понравилась книга.",
+            "Не поцимаю, почему такая низкая оценка.",
+            "Интересно. Много места для фантазии."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/shots/18956.jpg",
+        "author": "Фостер Алан Дин",
+        "txt_path": "data_books/books/А что с ними делать дальше.txt",
+        "img_src": "data_books/images/А что с ними делать дальше.jpg"
+    },
+    {
+        "bookname": "А дом стоит себе спокойно (Вечный дом)",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Ван Вогт Альфред",
+        "txt_path": "data_books/books/А дом стоит себе спокойно (Вечный дом).txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А еще мы выгуливаем собак",
+        "comments": [
+            "Легенький рассказик о фирме оказующей ну просто любые услуги.",
+            "Рекомдую у Ханлайнф плохих книг нетю.",
+            "Хайнлайн - замечателен!!!"
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Хайнлайн Роберт",
+        "txt_path": "data_books/books/А еще мы выгуливаем собак.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А где же Рошар",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Глазков Юрий",
+        "txt_path": "data_books/books/А где же Рошар.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А и Е",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Стульник Сергей",
+        "txt_path": "data_books/books/А и Е.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А я пойду дальше",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Лейбер Фриц",
+        "txt_path": "data_books/books/А я пойду дальше.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А как же еще",
+        "comments": [
+            "Чудесный юмор )"
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Каттнер Генри",
+        "txt_path": "data_books/books/А как же еще.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А мне до них",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Корепанов Алексей",
+        "txt_path": "data_books/books/А мне до них.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А могла бы и быть",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Григорьев Владимир",
+        "txt_path": "data_books/books/А могла бы и быть.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А моя мама - ведьма!",
+        "comments": [
+            "Весьма рекомендую. Магия глазами ребёнка, рассказ - троюродный брат шурина кума знакомой подруги от того фильма \"Лабиринт Фавна\"... В общем читаем."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Тенн Уильям",
+        "txt_path": "data_books/books/А моя мама - ведьма!.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А мы лезем в окно",
+        "comments": [
+            "По этому рассказу я поставил номер в институте культуры еще  в 1990 году. До сих пор его признают как шедевр студенческого мастерства. Пытались некоторые поставить по-своему, но когда им Евгений Вандалковский рассказывал как ЭТО было - делали реверанс и искали другой материал."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Молзберг Барри",
+        "txt_path": "data_books/books/А мы лезем в окно.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А она уходила",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Дымов Феликс Яковлевич",
+        "txt_path": "data_books/books/А она уходила.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А поезд идет",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Ашкинази Леонид",
+        "txt_path": "data_books/books/А поезд идет.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А роза упала на лапу Азора",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Осинский Владимир",
+        "txt_path": "data_books/books/А роза упала на лапу Азора.txt",
+        "img_src": "static/book_image_for_none.jpg"
+    },
+    {
+        "bookname": "А вдруг они победят",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "image_link": "https://tululu.org/images/nopic.gif",
+        "author": "Белен",
+        "txt_path": "data_books/books/А вдруг они победят.txt",
+        "img_src": "static/book_image_for_none.jpg"
     }
 ]

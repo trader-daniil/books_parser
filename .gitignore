@@ -127,8 +127,6 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-# mkdocs documentation
-/site
 
 # mypy
 .mypy_cache/
@@ -138,13 +136,11 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# pytype static type analyzer
-.pytype/
+
 
 # Cython debug symbols
 cython_debug/
-images/
-books/
+
 
 .vscode/
 test*
