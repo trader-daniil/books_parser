@@ -1,23 +1,11 @@
-from http.server import HTTPServer, SimpleHTTPRequestHandler
+import json
+import math
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-import json
 from livereload import Server
 from more_itertools import chunked
-import math
 
-"""
-env = Environment(
-    loader=FileSystemLoader('.'),
-    autoescape=select_autoescape(['html', 'xml'])
-)
-template = env.get_template('index.html')
-with open("data_books/books_info.json", "r", encoding="utf-8") as write_file:
-    books_info = write_file.read()
-books_info = json.loads(books_info)
-books_info = list(chunked(books_info, 20))
-"""
 
 def on_reload(template, data, filename, pages_amount, page_num):
     next_page = math.ceil(page_num) + 1
@@ -38,11 +26,15 @@ def on_reload(template, data, filename, pages_amount, page_num):
 
 def main():
     env = Environment(
-    loader=FileSystemLoader('.'),
-    autoescape=select_autoescape(['html', 'xml']),
-    )   
+        loader=FileSystemLoader('.'),
+        autoescape=select_autoescape(['html', 'xml']),
+    )
     template = env.get_template('index.html')
-    with open("data_books/books_info.json", "r", encoding="utf-8") as write_file:
+    with open(
+        "data_books/books_info.json",
+        "r",
+        encoding="utf-8",
+    ) as write_file:
         books_info = write_file.read()
     books_info = json.loads(books_info)
     books_info = list(chunked(books_info, 20))
@@ -65,6 +57,7 @@ def main():
                 filename=file_with_books_path),
         )
     server.serve(root='.')
+
 
 if __name__ == '__main__':
     main()
