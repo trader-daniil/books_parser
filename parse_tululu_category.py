@@ -86,7 +86,9 @@ def main():
             book_response.raise_for_status()
             booksoup = BeautifulSoup(book_response.text, 'lxml')
             book_info = parse_book_page(booksoup=booksoup)
+            book_info['bookname'] = book_info['bookname'].replace("...", "", 1)
             bookname = book_info['bookname']
+            #bookname = book_info['bookname']
             book_path = f'{books_path}/{bookname}.txt'
             if not args.skip_txt:
                 book_info['txt_path'] = book_path
