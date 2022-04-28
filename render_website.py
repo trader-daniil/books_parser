@@ -25,6 +25,7 @@ def on_reload(template, data, filename, pages_amount, page_num):
 
 
 def main():
+    books_per_page = 10
     env = Environment(
         loader=FileSystemLoader('.'),
         autoescape=select_autoescape(['html', 'xml']),
@@ -35,27 +36,26 @@ def main():
         "r",
         encoding="utf-8",
     ) as write_file:
-        books_info = write_file.read()
-    books_info = json.loads(books_info)
-    books_info = list(chunked(books_info, 20))
+        books_on_page = json.load(write_file)
+    books_on_page = list(chunked(books_on_page, books_per_page))
     pages_path = 'pages'
     Path(pages_path).mkdir(
         parents=True,
         exist_ok=True,
     )
     server = Server()
-    for books_num, books in enumerate(books_info, start=1):
+    for books_num, books in enumerate(books_on_page, start=1):
         file_with_books_path = f'pages/page_with_books{books_num}.html'
-        books_list = list(chunked(books, 2))
-        server.watch(
-            file_with_books_path,
-            on_reload(
-                page_num=books_num,
-                pages_amount=len(books_info) + 1,
-                template=template,
-                data=books_list,
-                filename=file_with_books_path),
+        books_in_block = list(chunked(books, 2))
+        on_reload(
+            page_num=books_num,
+            pages_amount=len(books_on_page) + 1,
+            template=template,
+            data=books_in_block,
+            filename=file_with_books_path,
         )
+
+    server.watch('pages/*.html')
     server.serve(root='.')
 
 
