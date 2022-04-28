@@ -103,7 +103,8 @@ def main():
             book_response.raise_for_status()
             booksoup = BeautifulSoup(book_response.text, 'lxml')
             book_info = parse_book_page(booksoup=booksoup)
-            bookname = book_info['bookname']
+            bookname = book_info['bookname'].replace('.', ' ')
+            #bookname = book_info['bookname']
             comments = book_info['comments']
             author = book_info['author']
             genres = book_info['genres']
