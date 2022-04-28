@@ -149,8 +149,8 @@
         ],
         "image_link": "https://tululu.org/shots/2043.jpg",
         "author": "Аджалов Владимир",
-        "txt_path": "data_books/books/И Он пришел    ИТ-роман.txt",
-        "img_src": "data_books/images/И Он пришел    ИТ-роман.jpg"
+        "txt_path": "data_books/books/И Он пришел... ИТ-роман.txt",
+        "img_src": "data_books/images/И Он пришел... ИТ-роман.jpg"
     },
     {
         "bookname": "Казнить нельзя помиловать",
@@ -496,8 +496,8 @@
         ],
         "image_link": "https://tululu.org/shots/18919.jpg",
         "author": "Азимов Айзек",
-        "txt_path": "data_books/books/   Яко помниши его.txt",
-        "img_src": "data_books/images/   Яко помниши его.jpg"
+        "txt_path": "data_books/books/...Яко помниши его.txt",
+        "img_src": "data_books/images/...Яко помниши его.jpg"
     },
     {
         "bookname": "...На Вавилон",
@@ -513,7 +513,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Силверберг Роберт",
-        "txt_path": "data_books/books/   На Вавилон.txt",
+        "txt_path": "data_books/books/...На Вавилон.txt",
         "img_src": "static/book_image_for_none.jpg"
     },
     {
@@ -538,8 +538,8 @@
         ],
         "image_link": "https://tululu.org/shots/18921.jpg",
         "author": "Азимов Айзек",
-        "txt_path": "data_books/books/   Вставьте шплинт А в гнездо Б.txt",
-        "img_src": "data_books/images/   Вставьте шплинт А в гнездо Б.jpg"
+        "txt_path": "data_books/books/...Вставьте шплинт А в гнездо Б.txt",
+        "img_src": "data_books/images/...Вставьте шплинт А в гнездо Б.jpg"
     },
     {
         "bookname": "...к звездам!",
@@ -551,7 +551,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Радутный Радий",
-        "txt_path": "data_books/books/   к звездам!.txt",
+        "txt_path": "data_books/books/...к звездам!.txt",
         "img_src": "static/book_image_for_none.jpg"
     },
     {
@@ -567,7 +567,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Карр Алекс",
-        "txt_path": "data_books/books/1-книга  Весна на Галане.txt",
+        "txt_path": "data_books/books/1-книга. Весна на Галане.txt",
         "img_src": "static/book_image_for_none.jpg"
     },
     {
@@ -580,7 +580,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Карр Алекс",
-        "txt_path": "data_books/books/10-я книга  Варкенские перемены.txt",
+        "txt_path": "data_books/books/10-я книга. Варкенские перемены.txt",
         "img_src": "static/book_image_for_none.jpg"
     },
     {
@@ -594,7 +594,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Карр Алекс",
-        "txt_path": "data_books/books/11-я книга  Рождение империи сенсетивов.txt",
+        "txt_path": "data_books/books/11-я книга. Рождение империи сенсетивов.txt",
         "img_src": "static/book_image_for_none.jpg"
     },
     {
@@ -605,7 +605,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Карр Алекс",
-        "txt_path": "data_books/books/13-я книга  Галанское сватовство.txt",
+        "txt_path": "data_books/books/13-я книга. Галанское сватовство.txt",
         "img_src": "static/book_image_for_none.jpg"
     },
     {
@@ -633,7 +633,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Карр Алекс",
-        "txt_path": "data_books/books/14-я книга  Барабаны Таланов.txt",
+        "txt_path": "data_books/books/14-я книга. Барабаны Таланов.txt",
         "img_src": "static/book_image_for_none.jpg"
     },
     {
@@ -644,7 +644,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Карр Алекс",
-        "txt_path": "data_books/books/15-я книга  Школа арханелов.txt",
+        "txt_path": "data_books/books/15-я книга. Школа арханелов.txt",
         "img_src": "static/book_image_for_none.jpg"
     },
     {
@@ -655,7 +655,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Карр Алекс",
-        "txt_path": "data_books/books/2-я книга  Сенсетивы Галана.txt",
+        "txt_path": "data_books/books/2-я книга. Сенсетивы Галана.txt",
         "img_src": "static/book_image_for_none.jpg"
     },
     {
@@ -666,7 +666,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Карр Алекс",
-        "txt_path": "data_books/books/4-я книга  Экспедиция на Голубой планетоид.txt",
+        "txt_path": "data_books/books/4-я книга. Экспедиция на Голубой планетоид.txt",
         "img_src": "static/book_image_for_none.jpg"
     },
     {
@@ -677,7 +677,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Карр Алекс",
-        "txt_path": "data_books/books/5-я книга  В подземельях Бидрупа.txt",
+        "txt_path": "data_books/books/5-я книга. В подземельях Бидрупа.txt",
         "img_src": "static/book_image_for_none.jpg"
     },
     {
@@ -702,7 +702,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Карр Алекс",
-        "txt_path": "data_books/books/6-я книга  Сражение за Бидруп.txt",
+        "txt_path": "data_books/books/6-я книга. Сражение за Бидруп.txt",
         "img_src": "static/book_image_for_none.jpg"
     },
     {
@@ -726,7 +726,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Карр Алекс",
-        "txt_path": "data_books/books/7-я книга  День Откровения.txt",
+        "txt_path": "data_books/books/7-я книга. День Откровения.txt",
         "img_src": "static/book_image_for_none.jpg"
     },
     {
@@ -737,7 +737,7 @@
         ],
         "image_link": "https://tululu.org/images/nopic.gif",
         "author": "Карр Алекс",
-        "txt_path": "data_books/books/8-я книга  Полет Уригленны.txt",
+        "txt_path": "data_books/books/8-я книга. Полет Уригленны.txt",
         "img_src": "static/book_image_for_none.jpg"
     }
 ]
