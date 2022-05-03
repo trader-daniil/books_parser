@@ -1,5 +1,7 @@
 import json
+from logging import root
 import math
+import os
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -41,13 +43,13 @@ def on_reload():
 
 
 def main():
-    pages_path = 'pages'
-    Path(pages_path).mkdir(
+    templates_path = 'pages/'
+    Path(templates_path).mkdir(
         parents=True,
         exist_ok=True,
     )
     server = Server()
-    server.watch('pages/', on_reload)
+    server.watch('pages/*.html', on_reload)
     server.serve(root='.')
 
 
